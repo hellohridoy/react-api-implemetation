@@ -27,7 +27,7 @@ const Navbar = () => {
                         University <span className="caret"></span>
                     </NavLink>
                     <ul className="dropdown-menu">
-                        <li><NavLink to="/university/add-university" activeClassName="active">Post University</NavLink></li>
+                        <li><NavLink to="/university/add-university" activeClassName="active">Add University</NavLink></li>
                         <li><NavLink to="/university/university-info" activeClassName="active">University Info</NavLink></li>
                         <li><NavLink to="/university/view" activeClassName="active">View University</NavLink></li>
                         <li><NavLink to="/university/update" activeClassName="active">Update University Info</NavLink></li>
