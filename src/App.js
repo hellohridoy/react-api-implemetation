@@ -29,7 +29,7 @@ function App() {
                 <Route path="/university/add-university" element={<AddUniversity />} />
                 <Route path="/university/university-info" element={<UniversityInfo />} />
                 <Route path="/university/view" element={<ViewUniversity />} />
-                <Route path="/university/update" element={<UpdateUniversity />} />
+                <Route path="/universities/edit/:id" element={<UpdateUniversity />} />
             </Routes>
         </Router>
     );
