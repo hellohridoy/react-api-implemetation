@@ -1,7 +1,7 @@
 // src/components/Navbar.js
 
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 import './Navbar.css'; // Optional: for adding custom styles
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
