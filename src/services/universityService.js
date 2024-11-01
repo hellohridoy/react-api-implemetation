@@ -3,8 +3,8 @@ import { BASE_URL } from '../constant/apiConstants'; // Import the base URL
 
 // Define the API endpoints
 const API_URL = `${BASE_URL}/v1/university/university-infos`; // Main endpoint for adding university data
-const GET_URL = `${BASE_URL}/v1/university/universities-infos`; // Endpoint for fetching all university data
-const UPDATE_URL = `${BASE_URL}/v1/university/universities-infos`; // Update endpoint
+const GET_URL = `${BASE_URL}/v1/university/university-infos`; // Endpoint for fetching all university data
+const UPDATE_URL = `${BASE_URL}/v1/university/university-infos`; // Update endpoint
 
 const universityService = {
     // Fetch all university data (GET request)
@@ -44,6 +44,15 @@ const universityService = {
     updateUniversity: async (id, universityData) => {
         try {
             const response = await axios.put(`${UPDATE_URL}/${id}`, universityData);
+            return response.data;
+        } catch (error) {
+            console.error(`Error updating university data with ID ${id}:`, error);
+            throw error; // Rethrow the error for further handling
+        }
+    },
+    deleteUniversity: async (id) => {
+        try {
+            const response = await axios.delete(`${UPDATE_URL}/${id}`);
             return response.data;
         } catch (error) {
             console.error(`Error updating university data with ID ${id}:`, error);

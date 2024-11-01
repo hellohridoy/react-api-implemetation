@@ -1,5 +1,3 @@
-// src/components/AddUniversity.js
-
 import React, { useState } from "react";
 import universityService from '../services/universityService'; // Import the service
 
@@ -112,13 +110,13 @@ const AddUniversity = () => {
         <div className="container mt-5">
             <h2 className="text-center mb-4">University Information</h2>
             <form onSubmit={handleSubmit}>
-                {/* University Name */}
-                <div className="form-group row">
-                    <label htmlFor="universityName" className="col-sm-2 col-form-label">University Name</label>
-                    <div className="col-sm-10">
+                <div className="row">
+                    {/* University Name */}
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="universityName">University Name</label>
                         <input
                             type="text"
-                            className={`form-control ${errors.universityName ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.universityName ? 'is-invalid' : ''}`}
                             id="universityName"
                             name="universityName"
                             value={university.universityName}
@@ -128,15 +126,13 @@ const AddUniversity = () => {
                         />
                         {errors.universityName && <div className="invalid-feedback">{errors.universityName}</div>}
                     </div>
-                </div>
 
-                {/* University Address */}
-                <div className="form-group row">
-                    <label htmlFor="universityAddress" className="col-sm-2 col-form-label">University Address</label>
-                    <div className="col-sm-10">
+                    {/* University Address */}
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="universityAddress">University Address</label>
                         <input
                             type="text"
-                            className={`form-control ${errors.universityAddress ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.universityAddress ? 'is-invalid' : ''}`}
                             id="universityAddress"
                             name="universityAddress"
                             value={university.universityAddress}
@@ -148,10 +144,10 @@ const AddUniversity = () => {
                     </div>
                 </div>
 
-                {/* University Type */}
-                <div className="form-group row">
-                    <label htmlFor="universityType" className="col-sm-2 col-form-label">University Type</label>
-                    <div className="col-sm-10">
+                {/* University Type and Rating */}
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="universityType">University Type</label>
                         <select
                             className="form-control"
                             id="universityType"
@@ -163,16 +159,13 @@ const AddUniversity = () => {
                             <option value="PRIVATE">Private</option>
                         </select>
                     </div>
-                </div>
 
-                {/* University Rating */}
-                <div className="form-group row">
-                    <label htmlFor="universityRating" className="col-sm-2 col-form-label">University Rating</label>
-                    <div className="col-sm-10">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="universityRating">University Rating</label>
                         <input
                             type="number"
                             step="0.1"
-                            className={`form-control ${errors.universityRating ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.universityRating ? 'is-invalid' : ''}`}
                             id="universityRating"
                             name="universityRating"
                             value={university.universityRating}
@@ -185,46 +178,42 @@ const AddUniversity = () => {
                 </div>
 
                 {/* University Description */}
-                <div className="form-group row">
-                    <label htmlFor="universityDescription" className="col-sm-2 col-form-label">Description</label>
-                    <div className="col-sm-10">
-                        <textarea
-                            className={`form-control ${errors.universityDescription ? 'is-invalid' : ''}`} // Add error class if invalid
-                            id="universityDescription"
-                            name="universityDescription"
-                            rows="3"
-                            value={university.universityDescription}
-                            onChange={handleChange}
-                            placeholder="Enter university description"
-                            required
-                        />
-                        {errors.universityDescription && <div className="invalid-feedback">{errors.universityDescription}</div>}
-                    </div>
+                <div className="form-group mb-3">
+                    <label htmlFor="universityDescription">Description</label>
+                    <textarea
+                        className={`form-control ${errors.universityDescription ? 'is-invalid' : ''}`}
+                        id="universityDescription"
+                        name="universityDescription"
+                        rows="3"
+                        value={university.universityDescription}
+                        onChange={handleChange}
+                        placeholder="Enter university description"
+                        required
+                    />
+                    {errors.universityDescription && <div className="invalid-feedback">{errors.universityDescription}</div>}
                 </div>
 
                 {/* University Image URL */}
-                <div className="form-group row">
-                    <label htmlFor="universityImage" className="col-sm-2 col-form-label">University Image URL</label>
-                    <div className="col-sm-10">
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="universityImage"
-                            name="universityImage"
-                            value={university.universityImage}
-                            onChange={handleChange}
-                            placeholder="Enter image URL"
-                        />
-                    </div>
+                <div className="form-group mb-3">
+                    <label htmlFor="universityImage">University Image URL</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="universityImage"
+                        name="universityImage"
+                        value={university.universityImage}
+                        onChange={handleChange}
+                        placeholder="Enter image URL"
+                    />
                 </div>
 
-                {/* Starting Date */}
-                <div className="form-group row">
-                    <label htmlFor="startingDate" className="col-sm-2 col-form-label">Starting Date</label>
-                    <div className="col-sm-10">
+                {/* Starting Date and Casually Opens At */}
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="startingDate">Starting Date</label>
                         <input
                             type="date"
-                            className={`form-control ${errors.startingDate ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.startingDate ? 'is-invalid' : ''}`}
                             id="startingDate"
                             name="startingDate"
                             value={university.startingDate}
@@ -233,15 +222,12 @@ const AddUniversity = () => {
                         />
                         {errors.startingDate && <div className="invalid-feedback">{errors.startingDate}</div>}
                     </div>
-                </div>
 
-                {/* Casually Opens At */}
-                <div className="form-group row">
-                    <label htmlFor="casuallyOpensAt" className="col-sm-2 col-form-label">Casually Opens At</label>
-                    <div className="col-sm-10">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="casuallyOpensAt">Casually Opens At</label>
                         <input
                             type="datetime-local"
-                            className={`form-control ${errors.casuallyOpensAt ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.casuallyOpensAt ? 'is-invalid' : ''}`}
                             id="casuallyOpensAt"
                             name="casuallyOpensAt"
                             value={university.casuallyOpensAt}
@@ -252,16 +238,14 @@ const AddUniversity = () => {
                     </div>
                 </div>
 
-                {/* Value Fields */}
+                {/* Additional Information Section */}
                 <h4 className="mt-4">Additional Information</h4>
-
-                {/* Campus Size */}
-                <div className="form-group row">
-                    <label htmlFor="campusSize" className="col-sm-2 col-form-label">Campus Size</label>
-                    <div className="col-sm-10">
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="campusSize">Campus Size</label>
                         <input
                             type="text"
-                            className={`form-control ${errors.campusSize ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.campusSize ? 'is-invalid' : ''}`}
                             id="campusSize"
                             name="campusSize"
                             value={university.value.campusSize}
@@ -271,51 +255,44 @@ const AddUniversity = () => {
                         />
                         {errors.campusSize && <div className="invalid-feedback">{errors.campusSize}</div>}
                     </div>
-                </div>
 
-                {/* Student Body */}
-                <div className="form-group row">
-                    <label htmlFor="studentBody" className="col-sm-2 col-form-label">Student Body</label>
-                    <div className="col-sm-10">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="studentBody">Student Body</label>
                         <input
                             type="text"
-                            className={`form-control ${errors.studentBody ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.studentBody ? 'is-invalid' : ''}`}
                             id="studentBody"
                             name="studentBody"
                             value={university.value.studentBody}
                             onChange={(e) => setUniversity({ ...university, value: { ...university.value, studentBody: e.target.value } })}
-                            placeholder="Enter student body"
+                            placeholder="Enter student body size"
                             required
                         />
                         {errors.studentBody && <div className="invalid-feedback">{errors.studentBody}</div>}
                     </div>
                 </div>
 
-                {/* Endowment */}
-                <div className="form-group row">
-                    <label htmlFor="endowment" className="col-sm-2 col-form-label">Endowment</label>
-                    <div className="col-sm-10">
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="endowment">Endowment</label>
                         <input
                             type="text"
-                            className={`form-control ${errors.endowment ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.endowment ? 'is-invalid' : ''}`}
                             id="endowment"
                             name="endowment"
                             value={university.value.endowment}
                             onChange={(e) => setUniversity({ ...university, value: { ...university.value, endowment: e.target.value } })}
-                            placeholder="Enter endowment"
+                            placeholder="Enter endowment value"
                             required
                         />
                         {errors.endowment && <div className="invalid-feedback">{errors.endowment}</div>}
                     </div>
-                </div>
 
-                {/* Notable Programs */}
-                <div className="form-group row">
-                    <label htmlFor="notablePrograms" className="col-sm-2 col-form-label">Notable Programs</label>
-                    <div className="col-sm-10">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="notablePrograms">Notable Programs</label>
                         <input
                             type="text"
-                            className={`form-control ${errors.notablePrograms ? 'is-invalid' : ''}`} // Add error class if invalid
+                            className={`form-control ${errors.notablePrograms ? 'is-invalid' : ''}`}
                             id="notablePrograms"
                             name="notablePrograms"
                             value={university.value.notablePrograms}
@@ -327,6 +304,7 @@ const AddUniversity = () => {
                     </div>
                 </div>
 
+                {/* Submit Button */}
                 <button type="submit" className="btn btn-primary mt-3">Add University</button>
             </form>
         </div>
