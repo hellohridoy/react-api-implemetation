@@ -1,7 +1,7 @@
 // DashBoardService.js
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/v1/university/university-infos/data";
+const API_URL = "http://localhost:9000/v1/university/university-infos/data";
 
 export const getDashboardDetails = async () => {
     try {

@@ -129,3 +129,6 @@ ul li a:hover {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+.bg-green {
+    background-color: green !important; /* Add !important to override other styles */
+}

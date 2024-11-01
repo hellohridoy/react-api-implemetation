@@ -36,14 +36,14 @@ const Navbar = () => {
                         </li>
                         {/* Dropdown for University Menu */}
                         <li className="nav-item dropdown">
-                            <NavLink to="#" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <NavLink to="#" className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 University
                             </NavLink>
                             <ul className="dropdown-menu bg-green" aria-labelledby="navbarDropdown">
-                                <li><NavLink to="/university/add-university" className="dropdown-item" activeClassName="active">Add University</NavLink></li>
+                                <li><NavLink to="/university/add-university" className="dropdown-item " activeClassName="active">Add University</NavLink></li>
                                 <li><NavLink to="/university/university-info" className="dropdown-item" activeClassName="active">University Info</NavLink></li>
-                                <li><NavLink to="/university/view" className="dropdown-item" activeClassName="active">View University</NavLink></li>
-                                <li><NavLink to="/university/update" className="dropdown-item" activeClassName="active">Update University Info</NavLink></li>
+                                <li><NavLink to="/university/view" className="dropdown-item " activeClassName="active">View University</NavLink></li>
+                                <li><NavLink to="/university/update" className="dropdown-item " activeClassName="active">Update University Info</NavLink></li>
                             </ul>
                         </li>
                     </ul>
