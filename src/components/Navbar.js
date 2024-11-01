@@ -1,10 +1,8 @@
-// src/components/Navbar.js
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css'; // Custom styles if needed
+import './Navbar.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
     return (
